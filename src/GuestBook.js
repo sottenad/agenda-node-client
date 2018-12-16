@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { API_ROOT } from './api-config';
 
 class GuestBook extends Component{
   constructor(props){
@@ -10,9 +11,9 @@ class GuestBook extends Component{
     event.preventDefault();
     const target = event.target;
     const data = new FormData(event.target);
-    
+        
 
-    fetch('http://localhost:3001/api/signatures', {
+    fetch( API_ROOT + '/api/signatures', {
       method: 'POST',
       headers:{ "Content-Type": "application/json" },
       body: JSON.stringify({
